@@ -23,7 +23,7 @@ public class MazeStartController : MonoBehaviour
             else
             {
                 verweilenTimer -= Time.deltaTime;
-                timerTextUI.text = "Time to start: " + verweilenTimer.ToString("0.##") + "s";
+                timerTextUI.text = "Time to start:\n" + verweilenTimer.ToString("0.0") + "s";
             }
         }
     }
