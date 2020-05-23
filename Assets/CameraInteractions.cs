@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CameraInteractions : MonoBehaviour
 {
@@ -37,77 +38,116 @@ public class CameraInteractions : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.tag == "Verweilen")
+                    // Menü-Aktionen
+                    if (SceneManager.GetActiveScene().name == "Menü")
                     {
-                        if (oldHit.collider != null)
+                        // Level laden oder Spiel beenden
+                        if (hit.collider.tag == "Verweilen")
                         {
-                            if (oldHit.collider != hit.collider)
+                            //do things
+
+                            oldHit = hit;
+                            if (oldHit.collider.tag == "Rotieren")
                             {
-                                rayLeft = false;
-                                OnRayLeave();
-                                OnRayHit(hit);
-                                oldHit = hit;
+                                if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
+                                    oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
+                            }
+                        }
+                        // Beschreibung anzeigen
+                        if (hit.collider.tag == "Rotieren")
+                        {
+                            if (hit.collider.GetComponent<RotateCube>().GetIsInFocus())
+                                hit.collider.GetComponent<RotateCube>().SetIsInFocus(true);
+                            oldHit = hit;
+                        }
+                    }
+
+                    // Aktionen im Spiel
+                    else
+                    {
+                        if (hit.collider.tag == "Verweilen")
+                        {
+                            if (oldHit.collider != null)
+                            {
+                                if (oldHit.collider != hit.collider)
+                                {
+                                    rayLeft = false;
+                                    OnRayLeaveMaze();
+                                    OnRayHitMaze(hit);
+                                    oldHit = hit;
+                                }
+                                else
+                                {
+                                    if (rayLeft)
+                                    {
+                                        OnRayHitMaze(hit);
+                                        oldHit = hit;
+                                        rayLeft = false;
+                                    }
+                                }
                             }
                             else
                             {
-                                if (rayLeft)
-                                {
-                                    OnRayHit(hit);
-                                    oldHit = hit;
-                                    rayLeft = false;
-                                }
+                                OnRayHitMaze(hit);
+                                oldHit = hit;
+                                rayLeft = false;
                             }
                         }
                         else
                         {
-                            OnRayHit(hit);
-                            oldHit = hit;
-                            rayLeft = false;
+                            if (!rayLeft)
+                            {
+                                OnRayLeaveMaze();
+                                rayLeft = true;
+                            }
                         }
-                    }
-                    else
-                    {
-                        if (!rayLeft)
+                        if (gameStarted && hit.collider.tag == "Mauer")
                         {
-                            OnRayLeave();
-                            rayLeft = true;
+                            textUI.text = "Game over!";
+                            gameOver = true;
                         }
-                    }
-                    if (gameStarted && hit.collider.tag == "Mauer")
-                    {
-                        textUI.text = "Game over!";
-                        gameOver = true;
-                    }
-                    else
-                    {
-                        if (gameStarted && oldHit.collider != null)
+                        else
                         {
-                            OnRayLeave();
-                            rayLeft = true;
+                            if (gameStarted && oldHit.collider != null)
+                            {
+                                OnRayLeaveMaze();
+                                rayLeft = true;
+                            }
                         }
                     }
                 }
                 else
                 {
-                    OnRayLeave();
-                    rayLeft = true;
-                    if (gameStarted)
+                    // Menü-Aktionen
+                    if (SceneManager.GetActiveScene().name == "Menü")
                     {
-                        textUI.text = "Game over!";
-                        gameOver = true;
+                        if (oldHit.collider.tag == "Rotieren")
+                        {
+                            if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
+                                oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
+                        }
+                    } else
+                    {
+                        OnRayLeaveMaze();
+                        rayLeft = true;
+                        if (gameStarted)
+                        {
+                            textUI.text = "Game over!";
+                            gameOver = true;
+                        }
                     }
                 }
             }
         }
     }
 
-    void OnRayHit(RaycastHit hit)
+    void OnRayHitMaze(RaycastHit hit)
     {
         Debug.Log("hit");
         hit.collider.GetComponent<MazeStartController>().RayEnters(this);
     }
 
-    void OnRayLeave()
+    void OnRayLeaveMaze()
     {
         if (!rayLeft)
         {
@@ -119,5 +159,10 @@ public class CameraInteractions : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
+    }
+
+    public float getGameTimer()
+    {
+        return gameTimer;
     }
 }

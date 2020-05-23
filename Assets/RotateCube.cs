@@ -2,7 +2,7 @@
 
 public class RotateCube : MonoBehaviour
 {
-    public bool IsInFocus = true;
+    public bool IsInFocus = false;
 
     public void SetIsInFocus(bool state)
     {
