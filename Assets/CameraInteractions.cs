@@ -41,18 +41,44 @@ public class CameraInteractions : MonoBehaviour
                     // Menü-Aktionen
                     if (SceneManager.GetActiveScene().name == "Menü")
                     {
-                        // Level laden oder Spiel beenden
+                        // Level laden
                         if (hit.collider.tag == "Verweilen")
                         {
-                            //do things
-
-                            if (oldHit.collider != null && oldHit.collider.tag == "Rotieren") // man kann nie wissen, ob der Fall net doch mal eintritt lol
+                            if (oldHit.collider != null)
                             {
-                                if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
-                                    oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
+                                if (oldHit.collider != hit.collider)
+                                {
+                                    rayLeft = false;
+                                    OnRayLeaveLvlBlock();
+                                    OnRayHitLvlBlock(hit);
+                                    oldHit = hit;
+                                }
+                                else
+                                {
+                                    if (rayLeft)
+                                    {
+                                        OnRayHitLvlBlock(hit);
+                                        oldHit = hit;
+                                        rayLeft = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                OnRayHitLvlBlock(hit);
+                                oldHit = hit;
+                                rayLeft = false;
                             }
                             oldHit = hit;
+                        } else
+                        {
+                            if (oldHit.collider != null && oldHit.collider.tag == "Verweilen")
+                            {
+                                OnRayLeaveLvlBlock();
+                                rayLeft = true;
+                            }
                         }
+
                         // Beschreibung anzeigen
                         if (hit.collider.tag == "Rotieren")
                         {
@@ -127,6 +153,11 @@ public class CameraInteractions : MonoBehaviour
                         if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
                             oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
                     }
+                    if (oldHit.collider != null && oldHit.collider.tag == "Verweilen")
+                    {
+                        OnRayLeaveLvlBlock();
+                        rayLeft = true;
+                    }
                 }
                 else
                 {
@@ -163,5 +194,18 @@ public class CameraInteractions : MonoBehaviour
     public float getGameTimer()
     {
         return gameTimer;
+    }
+
+    void OnRayLeaveLvlBlock()
+    {
+        if (oldHit.collider.tag == "Verweilen" && !rayLeft)
+        {
+            oldHit.collider.GetComponent<LoadLvl>().RayLeaves();
+        }
+    }
+
+    void OnRayHitLvlBlock(RaycastHit hit)
+    {
+        hit.collider.GetComponent<LoadLvl>().RayEnters();
     }
 }
