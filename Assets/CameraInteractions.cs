@@ -30,7 +30,7 @@ public class CameraInteractions : MonoBehaviour
             if (gameStarted)
             {
                 gameTimer += Time.deltaTime;
-                textUI.text = "Timer: " + gameTimer.ToString("0.##") + "s";
+                textUI.text = "Timer:\n" + (gameTimer/60).ToString("00") + ":" + gameTimer.ToString("00.0") + "s";
             }
 
             RaycastHit hit;
@@ -46,17 +46,17 @@ public class CameraInteractions : MonoBehaviour
                         {
                             //do things
 
-                            oldHit = hit;
-                            if (oldHit.collider.tag == "Rotieren")
+                            if (oldHit.collider != null && oldHit.collider.tag == "Rotieren") // man kann nie wissen, ob der Fall net doch mal eintritt lol
                             {
                                 if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
                                     oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
                             }
+                            oldHit = hit;
                         }
                         // Beschreibung anzeigen
                         if (hit.collider.tag == "Rotieren")
                         {
-                            if (hit.collider.GetComponent<RotateCube>().GetIsInFocus())
+                            if (!hit.collider.GetComponent<RotateCube>().GetIsInFocus())
                                 hit.collider.GetComponent<RotateCube>().SetIsInFocus(true);
                             oldHit = hit;
                         }
@@ -116,25 +116,26 @@ public class CameraInteractions : MonoBehaviour
                         }
                     }
                 }
+            }
+            else
+            {
+                // Menü-Aktionen
+                if (SceneManager.GetActiveScene().name == "Menü")
+                {
+                    if (oldHit.collider != null && oldHit.collider.tag == "Rotieren")
+                    {
+                        if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
+                            oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
+                    }
+                }
                 else
                 {
-                    // Menü-Aktionen
-                    if (SceneManager.GetActiveScene().name == "Menü")
+                    OnRayLeaveMaze();
+                    rayLeft = true;
+                    if (gameStarted)
                     {
-                        if (oldHit.collider.tag == "Rotieren")
-                        {
-                            if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
-                                oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
-                        }
-                    } else
-                    {
-                        OnRayLeaveMaze();
-                        rayLeft = true;
-                        if (gameStarted)
-                        {
-                            textUI.text = "Game over!";
-                            gameOver = true;
-                        }
+                        textUI.text = "Game over!";
+                        gameOver = true;
                     }
                 }
             }
@@ -143,7 +144,6 @@ public class CameraInteractions : MonoBehaviour
 
     void OnRayHitMaze(RaycastHit hit)
     {
-        Debug.Log("hit");
         hit.collider.GetComponent<MazeStartController>().RayEnters(this);
     }
 
@@ -151,7 +151,6 @@ public class CameraInteractions : MonoBehaviour
     {
         if (!rayLeft)
         {
-            Debug.Log("leave");
             oldHit.collider.GetComponent<MazeStartController>().RayLeaves();
         }
     }
