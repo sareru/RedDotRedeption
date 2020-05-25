@@ -21,9 +21,12 @@ public class MazeStartController : MonoBehaviour
                 timerTextUI.text = "Start!";
                 ci.StartGame();
                 LightController.setLightIntensity(1);
+                // INFO: Spiel wurde gestartet, hier kann das Licht wieder angemacht werden
+                
             }
             else
             {
+                // INFO: der Startblock wird gerade angesehen und der Countdown bis zum Spielstart zählt runter
                 verweilenTimer -= Time.deltaTime;
                 timerTextUI.text = "Time to start: " + verweilenTimer.ToString("0.##") + "s";
             }
