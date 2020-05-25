@@ -5,7 +5,6 @@ public class MazeStartController : MonoBehaviour
 {
     public Text timerTextUI;
     CameraInteractions ci;
-    
 
     float verweilenTimer = 5f;
     bool verweilt = false;
@@ -20,9 +19,8 @@ public class MazeStartController : MonoBehaviour
                 started = true;
                 timerTextUI.text = "Start!";
                 ci.StartGame();
-                LightController.setLightIntensity(1);
+
                 // INFO: Spiel wurde gestartet, hier kann das Licht wieder angemacht werden
-                
             }
             else
             {
@@ -41,7 +39,6 @@ public class MazeStartController : MonoBehaviour
             verweilt = true;
             verweilenTimer = 5f;
             this.ci = ci;
-            
         }
     }
 
