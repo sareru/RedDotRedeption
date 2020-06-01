@@ -4,12 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class LoadLvl : MonoBehaviour
 {
-    public Text timerTextUI;
+    //public Text timerTextUI;
+    public Slider loadingSliderUI;
     public int zuLadendesLvl = 1;
 
-    float verweilenTimer = 3f;
+    const float timer = 2f;
+    float verweilenTimer;
     bool verweilt = false;
     bool gestartet = false;
+
+    private void Start()
+    {
+        verweilenTimer = timer;
+    }
 
     void Update()
     {
@@ -24,7 +31,7 @@ public class LoadLvl : MonoBehaviour
             else
             {
                 verweilenTimer -= Time.deltaTime;
-                timerTextUI.text = "Level " + zuLadendesLvl.ToString() + " wird geladen...";
+                loadingSliderUI.value = (timer - verweilenTimer) / timer;
                 Debug.Log(zuLadendesLvl);
             }
         }
@@ -33,12 +40,14 @@ public class LoadLvl : MonoBehaviour
     public void RayEnters()
     {
         verweilt = true;
-        verweilenTimer = 5f;
+        loadingSliderUI.value = 0f;
+        loadingSliderUI.gameObject.SetActive(true);
     }
 
     public void RayLeaves()
     {
+        loadingSliderUI.gameObject.SetActive(false);
         verweilt = false;
-        verweilenTimer = 5f;
+        verweilenTimer = timer;
     }
 }

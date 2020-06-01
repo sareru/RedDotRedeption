@@ -26,7 +26,7 @@ public class CameraInteractions : MonoBehaviour
             if (gameStarted)
             {
                 gameTimer += Time.deltaTime;
-                textUI.text = "Timer:\n" + (gameTimer/60).ToString("00") + ":" + gameTimer.ToString("00.0") + "s";
+                textUI.text = "Your time:\n" + (gameTimer/60).ToString("00") + ":" + gameTimer.ToString("00.0") + "s";
             }
 
             RaycastHit hit;
@@ -34,6 +34,7 @@ public class CameraInteractions : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
+
                     // Menü-Aktionen
                     if (SceneManager.GetActiveScene().name == "Menü")
                     {
@@ -87,6 +88,7 @@ public class CameraInteractions : MonoBehaviour
                     // Aktionen im Spiel
                     else
                     {
+                        // Startblock anvisiert
                         if (hit.collider.tag == "Verweilen")
                         {
                             if (oldHit.collider != null)
@@ -123,24 +125,27 @@ public class CameraInteractions : MonoBehaviour
                                 rayLeft = true;
                             }
                         }
+                        // Level gewonnen
                         if (gameStarted && hit.collider.tag == "Finish")
                         {
                             textUI.text = "Game complete!";
                             gameOver = true;
                         }
+                        // Level verloren
                         else if (gameStarted && hit.collider.tag == "Mauer")
                         {
                             textUI.text = "Game over!";
                             gameOver = true;
                         }
-                        else
+
+                        /*else
                         {
                             if (gameStarted && oldHit.collider != null)
                             {
                                 OnRayLeaveMaze();
                                 rayLeft = true;
                             }
-                        }
+                        }*/
                     }
                 }
             }

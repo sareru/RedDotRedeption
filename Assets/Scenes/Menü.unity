@@ -181,7 +181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 259657597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd727b04a5b7c84d819fefd210e7ee9, type: 3}
+  m_Script: {fileID: 11500000, guid: b495a877eac9f494baf38d8d907aefb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IsInFocus: 0
@@ -562,6 +562,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &705507995
@@ -821,6 +822,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469a0d366a684474ea5059c250949aa0, type: 3}
+--- !u!114 &841578504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6940786381981817615, guid: 469a0d366a684474ea5059c250949aa0,
+    type: 3}
+  m_PrefabInstance: {fileID: 841578503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1088516272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15954e1d77073d54ca14e2cbf476e2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerTextUI: {fileID: 1855797583}
+  loadingSliderUI: {fileID: 841578504}
   zuLadendesLvl: 1
 --- !u!222 &1767687377
 CanvasRenderer:
@@ -1519,18 +1532,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767687370}
   m_CullTransparentMesh: 0
---- !u!114 &1855797583 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5334930430293323752, guid: 469a0d366a684474ea5059c250949aa0,
-    type: 3}
-  m_PrefabInstance: {fileID: 841578503}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1856550862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,7 +1714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15954e1d77073d54ca14e2cbf476e2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerTextUI: {fileID: 1855797583}
+  loadingSliderUI: {fileID: 841578504}
   zuLadendesLvl: 2
 --- !u!65 &2029064928
 BoxCollider:
