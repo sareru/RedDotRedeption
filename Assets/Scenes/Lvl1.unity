@@ -702,6 +702,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 6753261565488541288, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565488541290, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1676,6 +1681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566198454428, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566198454430, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2691,6 +2701,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Mauer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567093360321, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567093360323, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}

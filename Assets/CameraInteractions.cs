@@ -123,7 +123,12 @@ public class CameraInteractions : MonoBehaviour
                                 rayLeft = true;
                             }
                         }
-                        if (gameStarted && hit.collider.tag == "Mauer")
+                        if (gameStarted && hit.collider.tag == "Finish")
+                        {
+                            textUI.text = "Game complete!";
+                            gameOver = true;
+                        }
+                        else if (gameStarted && hit.collider.tag == "Mauer")
                         {
                             textUI.text = "Game over!";
                             gameOver = true;
