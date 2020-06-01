@@ -8,6 +8,7 @@ public class CameraInteractions : MonoBehaviour
 
     public Text textUI;
     public LayerMask ignoreMask;
+    public Camera refCam;
 
     RaycastHit oldHit;
 
@@ -29,7 +30,7 @@ public class CameraInteractions : MonoBehaviour
             }
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(refCam.transform.position, refCam.transform.forward, out hit))
             {
                 if (hit.collider != null)
                 {
