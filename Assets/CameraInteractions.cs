@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CameraInteractions : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class CameraInteractions : MonoBehaviour
             if (gameStarted)
             {
                 gameTimer += Time.deltaTime;
-                textUI.text = "Timer: " + gameTimer.ToString("0.##") + "s";
+                textUI.text = "Timer:\n" + (gameTimer/60).ToString("00") + ":" + gameTimer.ToString("00.0") + "s";
             }
 
             RaycastHit hit;
@@ -32,59 +33,130 @@ public class CameraInteractions : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.tag == "Verweilen")
+                    // Menü-Aktionen
+                    if (SceneManager.GetActiveScene().name == "Menü")
                     {
-                        if (oldHit.collider != null)
+                        // Level laden
+                        if (hit.collider.tag == "Verweilen")
                         {
-                            if (oldHit.collider != hit.collider)
+                            if (oldHit.collider != null)
                             {
-                                rayLeft = false;
-                                OnRayLeave();
-                                OnRayHit(hit);
-                                oldHit = hit;
+                                if (oldHit.collider != hit.collider)
+                                {
+                                    rayLeft = false;
+                                    OnRayLeaveLvlBlock();
+                                    OnRayHitLvlBlock(hit);
+                                    oldHit = hit;
+                                }
+                                else
+                                {
+                                    if (rayLeft)
+                                    {
+                                        OnRayHitLvlBlock(hit);
+                                        oldHit = hit;
+                                        rayLeft = false;
+                                    }
+                                }
                             }
                             else
                             {
-                                if (rayLeft)
+                                OnRayHitLvlBlock(hit);
+                                oldHit = hit;
+                                rayLeft = false;
+                            }
+                            oldHit = hit;
+                        } else
+                        {
+                            if (oldHit.collider != null && oldHit.collider.tag == "Verweilen")
+                            {
+                                OnRayLeaveLvlBlock();
+                                rayLeft = true;
+                            }
+                        }
+
+                        // Beschreibung anzeigen
+                        if (hit.collider.tag == "Rotieren")
+                        {
+                            if (!hit.collider.GetComponent<RotateCube>().GetIsInFocus())
+                                hit.collider.GetComponent<RotateCube>().SetIsInFocus(true);
+                            oldHit = hit;
+                        }
+                    }
+
+                    // Aktionen im Spiel
+                    else
+                    {
+                        if (hit.collider.tag == "Verweilen")
+                        {
+                            if (oldHit.collider != null)
+                            {
+                                if (oldHit.collider != hit.collider)
                                 {
-                                    OnRayHit(hit);
-                                    oldHit = hit;
                                     rayLeft = false;
+                                    OnRayLeaveMaze();
+                                    OnRayHitMaze(hit);
+                                    oldHit = hit;
                                 }
+                                else
+                                {
+                                    if (rayLeft)
+                                    {
+                                        OnRayHitMaze(hit);
+                                        oldHit = hit;
+                                        rayLeft = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                OnRayHitMaze(hit);
+                                oldHit = hit;
+                                rayLeft = false;
                             }
                         }
                         else
                         {
-                            OnRayHit(hit);
-                            oldHit = hit;
-                            rayLeft = false;
+                            if (!rayLeft)
+                            {
+                                OnRayLeaveMaze();
+                                rayLeft = true;
+                            }
                         }
-                    }
-                    else
-                    {
-                        if (!rayLeft)
+                        if (gameStarted && hit.collider.tag == "Mauer")
                         {
-                            OnRayLeave();
-                            rayLeft = true;
+                            textUI.text = "Game over!";
+                            gameOver = true;
                         }
-                    }
-                    if (gameStarted && hit.collider.tag == "Mauer")
-                    {
-                        textUI.text = "Game over!";
-                        gameOver = true;
-                    }
-                    else
-                    {
-                        if (gameStarted && oldHit.collider != null)
+                        else
                         {
-                            OnRayLeave();
-                            rayLeft = true;
+                            if (gameStarted && oldHit.collider != null)
+                            {
+                                OnRayLeaveMaze();
+                                rayLeft = true;
+                            }
                         }
+                    }
+                }
+            }
+            else
+            {
+                // Menü-Aktionen
+                if (SceneManager.GetActiveScene().name == "Menü")
+                {
+                    if (oldHit.collider != null && oldHit.collider.tag == "Rotieren")
+                    {
+                        if (oldHit.collider.GetComponent<RotateCube>().GetIsInFocus())
+                            oldHit.collider.GetComponent<RotateCube>().SetIsInFocus(false);
+                    }
+                    if (oldHit.collider != null && oldHit.collider.tag == "Verweilen")
+                    {
+                        OnRayLeaveLvlBlock();
+                        rayLeft = true;
                     }
                 }
                 else
                 {
-                    OnRayLeave();
+                    OnRayLeaveMaze();
                     rayLeft = true;
                     if (gameStarted)
                     {
@@ -96,17 +168,15 @@ public class CameraInteractions : MonoBehaviour
         }
     }
 
-    void OnRayHit(RaycastHit hit)
+    void OnRayHitMaze(RaycastHit hit)
     {
-        Debug.Log("hit");
         hit.collider.GetComponent<MazeStartController>().RayEnters(this);
     }
 
-    void OnRayLeave()
+    void OnRayLeaveMaze()
     {
         if (!rayLeft)
         {
-            Debug.Log("leave");
             oldHit.collider.GetComponent<MazeStartController>().RayLeaves();
         }
     }
@@ -114,5 +184,23 @@ public class CameraInteractions : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
+    }
+
+    public float getGameTimer()
+    {
+        return gameTimer;
+    }
+
+    void OnRayLeaveLvlBlock()
+    {
+        if (oldHit.collider.tag == "Verweilen" && !rayLeft)
+        {
+            oldHit.collider.GetComponent<LoadLvl>().RayLeaves();
+        }
+    }
+
+    void OnRayHitLvlBlock(RaycastHit hit)
+    {
+        hit.collider.GetComponent<LoadLvl>().RayEnters();
     }
 }

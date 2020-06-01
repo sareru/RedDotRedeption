@@ -28,7 +28,7 @@ public class MazeStartController : MonoBehaviour
             {
                 // INFO: der Startblock wird gerade angesehen und der Countdown bis zum Spielstart zählt runter
                 verweilenTimer -= Time.deltaTime;
-                timerTextUI.text = "Time to start: " + verweilenTimer.ToString("0.##") + "s";
+                timerTextUI.text = "Time to start:\n" + verweilenTimer.ToString("0.0") + "s";
             }
         }
     }
