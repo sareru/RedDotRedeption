@@ -7,7 +7,7 @@ TagManager:
   - Verweilen
   - Weg
   - Mauer
-  - Button
+  - Rotieren
   layers:
   - Default
   - TransparentFX

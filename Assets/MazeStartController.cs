@@ -4,12 +4,19 @@ using UnityEngine.UI;
 public class MazeStartController : MonoBehaviour
 {
     public Text timerTextUI;
+    public Text messageTextUI;
+    public Slider loadingSliderUI;
     CameraInteractions ci;
-    
 
-    float verweilenTimer = 5f;
+    const float timer = 2f;
+    float verweilenTimer;
     bool verweilt = false;
     bool started = false;
+
+    private void Start()
+    {
+        verweilenTimer = timer;
+    }
 
     void Update()
     {
@@ -18,18 +25,25 @@ public class MazeStartController : MonoBehaviour
             if (verweilenTimer <= 0f)
             {
                 started = true;
-                timerTextUI.text = "Start!";
+                messageTextUI.text = "Start!";
                 ci.StartGame();
-                LightController.setLightIntensity(1);
-                // INFO: Spiel wurde gestartet, hier kann das Licht wieder angemacht werden
-                
+                //LightController.setLightIntensity(1);
+                loadingSliderUI.gameObject.SetActive(false);
+                messageTextUI.gameObject.SetActive(true);
             }
             else
             {
                 // INFO: der Startblock wird gerade angesehen und der Countdown bis zum Spielstart zählt runter
                 verweilenTimer -= Time.deltaTime;
-                timerTextUI.text = "Time to start: " + verweilenTimer.ToString("0.##") + "s";
+                loadingSliderUI.value = (timer - verweilenTimer) / timer;
+                //timerTextUI.text = "Time to start:\n" + verweilenTimer.ToString("0.0") + "s";
             }
+        } else if (started && verweilenTimer < 2f)
+        {
+            verweilenTimer += Time.deltaTime;
+        } else if (started && verweilenTimer >= 2f)
+        {
+            messageTextUI.gameObject.SetActive(false);
         }
     }
 
@@ -39,9 +53,9 @@ public class MazeStartController : MonoBehaviour
         {
             Debug.Log("enter");
             verweilt = true;
-            verweilenTimer = 5f;
             this.ci = ci;
-            
+            loadingSliderUI.value = 0f;
+            loadingSliderUI.gameObject.SetActive(true);
         }
     }
 
@@ -49,10 +63,10 @@ public class MazeStartController : MonoBehaviour
     {
         if (!started)
         {
+            loadingSliderUI.gameObject.SetActive(false);
             Debug.Log("leaves");
             verweilt = false;
-            verweilenTimer = 5f;
-            timerTextUI.text = "Time to start: " + verweilenTimer.ToString("0.##") + "s";
+            verweilenTimer = timer;
         }
     }
 }
