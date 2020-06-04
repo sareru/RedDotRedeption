@@ -27,7 +27,7 @@ public class MazeStartController : MonoBehaviour
                 started = true;
                 messageTextUI.text = "Start!";
                 ci.StartGame();
-                //LightController.setLightIntensity(1);
+                LightController.setLightIntensity(1);
                 loadingSliderUI.gameObject.SetActive(false);
                 messageTextUI.gameObject.SetActive(true);
             }
