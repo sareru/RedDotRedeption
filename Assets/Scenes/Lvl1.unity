@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.2
+    agentHeight: 1
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.26
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: b27f6fcb9c396e24dbb920a010caad4a, type: 2}
 --- !u!1 &49530611
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +251,50 @@ Transform:
   m_Father: {fileID: 1095215586}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &177115626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 177115627}
+  - component: {fileID: 177115628}
+  m_Layer: 5
+  m_Name: Goal 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &177115627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177115626}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2083346975}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &177115628
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177115626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &193602516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,10 +2173,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565257994966, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565260066665, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565260066665, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565260066667, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2194,6 +2248,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565288955860, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565288955862, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2204,6 +2263,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565290343260, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565290343262, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2213,6 +2277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565298711928, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565298711930, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2229,6 +2298,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565303625970, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565310529609, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2239,10 +2313,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565310529615, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565314748158, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565315427104, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565315427104, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565315427106, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2254,6 +2343,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565326809276, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565326809278, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2263,6 +2357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565329342957, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565329342959, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2283,6 +2382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565361855906, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565361855932, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2329,6 +2433,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565414130950, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565414376213, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
@@ -2368,6 +2477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565426982374, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565441018440, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2444,6 +2558,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565478337251, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565478337277, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2489,6 +2608,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565547279319, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565547987904, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2519,6 +2643,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565557783706, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565570273736, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2543,6 +2672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565577711393, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565577711395, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2588,6 +2722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565627307926, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565639821092, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2734,6 +2873,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565703918674, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565703918700, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2743,6 +2887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565704139497, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565704139499, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2764,6 +2913,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565707109456, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565707109458, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2774,6 +2928,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565709208744, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565709208746, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2783,6 +2942,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565713926104, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565713926106, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2804,6 +2968,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565724134321, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565724134323, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2818,6 +2987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565728418363, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565729340820, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2848,6 +3022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565741373178, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565746333920, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2883,6 +3062,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565782776792, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565782776794, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -2933,6 +3117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565824464564, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565824464566, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3004,6 +3193,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565852016785, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565852016787, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3028,6 +3222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565875106922, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565883129492, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3054,6 +3253,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565898797972, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565898797974, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3073,6 +3277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565906286148, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565906286150, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3114,6 +3323,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565920425548, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565920425550, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3128,6 +3342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565922804799, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565922995021, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3154,6 +3373,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261565946880977, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261565946880979, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3178,6 +3402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261565972123387, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261565979386768, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3244,6 +3473,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566042955292, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566042955294, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3259,10 +3493,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566059288231, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566072053506, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566072053506, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566072053532, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3279,10 +3523,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566076711850, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566077200140, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566077200140, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566077200142, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3298,6 +3552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566089136598, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566092984264, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3374,6 +3633,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566141570160, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566141570162, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3439,6 +3703,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566181351195, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566198454428, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
@@ -3463,6 +3732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566227049356, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566227049358, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3513,6 +3787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566250689092, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566250689094, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3584,6 +3863,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566348400529, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566348400531, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3623,6 +3907,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566402558165, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566402558167, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3664,6 +3953,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566434336448, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566434336450, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3678,6 +3972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566443595051, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566454245842, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3719,6 +4018,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566476080686, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566477343137, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3728,6 +4032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566477343143, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566491914537, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3748,6 +4057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566507546650, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566517096208, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3789,6 +4103,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566539203174, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566540920146, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
@@ -3813,6 +4132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566560716520, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566560716522, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -3929,6 +4253,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566659748215, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566659989203, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
@@ -3949,6 +4278,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566664333814, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566667968200, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
@@ -3968,6 +4302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566686812811, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566688337049, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4008,6 +4347,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566718339511, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566725029657, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4074,6 +4418,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566790048275, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566790048301, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4083,6 +4432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566793735842, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566793735868, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4098,6 +4452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566812821419, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566813775980, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4118,6 +4477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566816781887, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566824096677, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4164,6 +4528,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566882465853, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566882465855, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4173,6 +4542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566882557729, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566882557731, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4194,6 +4568,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566907086864, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566907086866, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4209,6 +4588,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566915275222, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566922067365, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4219,10 +4603,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261566922067371, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261566925790408, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261566925790408, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261566925790410, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4344,6 +4738,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567022069209, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567022069211, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4379,6 +4778,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567035286974, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567041645045, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4388,6 +4792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567041645051, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567049892593, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4429,6 +4838,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567064006651, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567083931344, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4438,6 +4852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567083931350, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567084481105, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4494,6 +4913,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567119747849, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567119747851, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4503,6 +4927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567125612419, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567125612445, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4519,6 +4948,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567149109935, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567151234032, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4534,6 +4968,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567154467228, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567154467230, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4543,6 +4982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567154909625, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567154909627, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4589,6 +5033,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567181357337, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567181357339, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4613,6 +5062,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567195219799, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567203593312, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4643,6 +5097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567213050703, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567214295893, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4724,10 +5183,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567234499275, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567253544849, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567253544849, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567253544851, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4763,6 +5232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567263893639, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567270698632, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4819,6 +5293,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Weg
       objectReference: {fileID: 0}
+    - target: {fileID: 6753261567323067957, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6753261567323067959, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4828,6 +5307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567331271201, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567331271203, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -4868,6 +5352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753261567395448412, guid: 44a07780a5098314e88178b1dcbabca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6753261567395448414, guid: 44a07780a5098314e88178b1dcbabca7,
         type: 3}
@@ -7945,6 +8434,137 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626123214}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1674653488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674653493}
+  - component: {fileID: 1674653492}
+  - component: {fileID: 1674653491}
+  - component: {fileID: 1674653490}
+  - component: {fileID: 1674653489}
+  - component: {fileID: 1674653494}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!195 &1674653489
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674653488}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.4
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!135 &1674653490
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674653488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1674653491
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674653488}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1674653492
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674653488}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1674653493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674653488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04, y: -16, z: -5.38}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1674653494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674653488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c43bc8da7e5a04e993937e60c4dbc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692381140
 GameObject:
   m_ObjectHideFlags: 0
@@ -8040,6 +8660,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692381140}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1731731134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731731135}
+  - component: {fileID: 1731731136}
+  m_Layer: 5
+  m_Name: Goal 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731731135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731731134}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2083346975}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1731731136
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731731134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1749648566
 GameObject:
   m_ObjectHideFlags: 0
@@ -9089,3 +9753,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061642298}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2083346974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2083346975}
+  m_Layer: 0
+  m_Name: EnemyGoals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2083346975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083346974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04, y: -16, z: -0.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 177115627}
+  - {fileID: 1731731135}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
