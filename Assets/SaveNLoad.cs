@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void SaveScore (Time time)
+    public static void SaveScore (PlayerTime time)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/highscore/points";

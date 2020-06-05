@@ -7,7 +7,7 @@ public class PlayerData
 {
     public double time;
    
-    public PlayerData (Time score)
+    public PlayerData (PlayerTime score)
     {
         time = score.time;
     }

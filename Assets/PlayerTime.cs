@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Time : MonoBehaviour
+public class PlayerTime : MonoBehaviour
 {
     public double time = 0;
 
