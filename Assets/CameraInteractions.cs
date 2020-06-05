@@ -7,6 +7,7 @@ public class CameraInteractions : MonoBehaviour
     // TODO: Interaction fürs Items aufsammeln
 
     public Text textUI;
+    public Text messageUI;
     public LayerMask ignoreMask;
     public Camera refCam;
 
@@ -23,10 +24,14 @@ public class CameraInteractions : MonoBehaviour
     {
         if (!gameOver)
         {
-            if (gameStarted)
+            if (gameStarted && !gameOver)
             {
                 gameTimer += Time.deltaTime;
-                textUI.text = "Your time:\n" + (gameTimer/60).ToString("00") + ":" + gameTimer.ToString("00.0") + "s";
+                textUI.text = "Deine Zeit:\n" + (gameTimer/60).ToString("00") + ":" + gameTimer.ToString("00.0") + "s";
+                if (gameTimer > 2f)
+                {
+                    messageUI.gameObject.SetActive(false);
+                }
             }
 
             RaycastHit hit;
@@ -128,13 +133,16 @@ public class CameraInteractions : MonoBehaviour
                         // Level gewonnen
                         if (gameStarted && hit.collider.tag == "Finish")
                         {
-                            textUI.text = "Game complete!";
+                            messageUI.text = "Gewonnen!";
+                            messageUI.gameObject.SetActive(true);
                             gameOver = true;
                         }
                         // Level verloren
                         else if (gameStarted && hit.collider.tag == "Mauer")
                         {
-                            textUI.text = "Game over!";
+                            textUI.text = "";
+                            messageUI.text = "Game Over!";
+                            messageUI.gameObject.SetActive(true);
                             gameOver = true;
                         }
 
