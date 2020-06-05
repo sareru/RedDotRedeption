@@ -5609,6 +5609,7 @@ MonoBehaviour:
   timerTextUI: {fileID: 1379293276}
   messageTextUI: {fileID: 1379293275}
   loadingSliderUI: {fileID: 1379293274}
+  arrows: {fileID: 1095215585}
 --- !u!1 &794940368
 GameObject:
   m_ObjectHideFlags: 0
