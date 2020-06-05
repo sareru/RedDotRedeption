@@ -8,13 +8,13 @@ public class PlayerTime : MonoBehaviour
 
     public void SaveTime()
     {
-        SaveSystem.SaveTime(this);
+        //SaveSystem.SaveTime(this);
     }
 
     public void LoadTime()
     {
-        PlayerData = SaveSystem.LoadTime();
+        //PlayerData = SaveSystem.LoadTime();
 
-        time = data.time;
+        //time = data.time;
     }
 }
