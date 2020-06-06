@@ -4319,8 +4319,9 @@ GameObject:
   - component: {fileID: 175029630}
   - component: {fileID: 175029629}
   - component: {fileID: 175029628}
+  - component: {fileID: 175029631}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Next Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4402,6 +4403,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175029626}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &175029631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175029626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15954e1d77073d54ca14e2cbf476e2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingSliderUI: {fileID: 1244399952}
+  zuLadendesLvl: Lvl3
 --- !u!1 &179445616
 GameObject:
   m_ObjectHideFlags: 0
@@ -6606,8 +6621,9 @@ GameObject:
   - component: {fileID: 258664373}
   - component: {fileID: 258664372}
   - component: {fileID: 258664371}
+  - component: {fileID: 258664374}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Back to Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6689,6 +6705,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258664369}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &258664374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258664369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15954e1d77073d54ca14e2cbf476e2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingSliderUI: {fileID: 1244399952}
+  zuLadendesLvl: "Men\xFC"
 --- !u!1 &268518616
 GameObject:
   m_ObjectHideFlags: 0
@@ -9304,8 +9334,8 @@ GameObject:
   - component: {fileID: 380477301}
   - component: {fileID: 380477300}
   m_Layer: 0
-  m_Name: Cube (198)
-  m_TagString: Weg
+  m_Name: Fake-Ziel
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9356,7 +9386,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 16061333277bddc49b12711fc871805c, type: 2}
+  - {fileID: 2100000, guid: 043ea79de150f9c4283ae1f75b470a71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30161,8 +30191,9 @@ GameObject:
   - component: {fileID: 1269445720}
   - component: {fileID: 1269445719}
   - component: {fileID: 1269445718}
+  - component: {fileID: 1269445721}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Restart Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30244,6 +30275,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269445716}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1269445721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269445716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15954e1d77073d54ca14e2cbf476e2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingSliderUI: {fileID: 1244399952}
+  zuLadendesLvl: Lvl2
 --- !u!1 &1274458600
 GameObject:
   m_ObjectHideFlags: 0
