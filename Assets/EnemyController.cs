@@ -30,7 +30,6 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("kollision");
         if (collision.collider == goals[turns % 2])
         {
             turns++;

@@ -6,12 +6,14 @@ public class MazeStartController : MonoBehaviour
     public Text timerTextUI;
     public Text messageTextUI;
     public Slider loadingSliderUI;
+    public GameObject arrows;
     CameraInteractions ci;
 
     const float timer = 2f;
     float verweilenTimer;
     bool verweilt = false;
     bool started = false;
+    bool allSet = false;
 
     private void Start()
     {
@@ -27,6 +29,7 @@ public class MazeStartController : MonoBehaviour
                 started = true;
                 messageTextUI.text = "Start!";
                 ci.StartGame();
+                arrows.gameObject.SetActive(false);
                 LightController.setLightIntensity(1);
                 loadingSliderUI.gameObject.SetActive(false);
                 messageTextUI.gameObject.SetActive(true);
@@ -41,10 +44,11 @@ public class MazeStartController : MonoBehaviour
         } else if (started && verweilenTimer < 2f)
         {
             verweilenTimer += Time.deltaTime;
-        } else if (started && verweilenTimer >= 2f)
+        }/* else if (started && verweilenTimer >= 2f && !allSet)
         {
             messageTextUI.gameObject.SetActive(false);
-        }
+            allSet = true;
+        }*/
     }
 
     public void RayEnters(CameraInteractions ci)

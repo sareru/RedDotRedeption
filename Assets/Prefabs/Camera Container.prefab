@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textUI: {fileID: 5334930430293323752}
+  messageUI: {fileID: 7559722733285594151}
   ignoreMask:
     serializedVersion: 2
     m_Bits: 32
