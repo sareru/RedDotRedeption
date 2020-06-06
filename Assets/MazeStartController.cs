@@ -7,6 +7,7 @@ public class MazeStartController : MonoBehaviour
     public Text messageTextUI;
     public Slider loadingSliderUI;
     public GameObject arrows;
+    public Light lighting;
     CameraInteractions ci;
 
     const float timer = 2f;
@@ -29,7 +30,7 @@ public class MazeStartController : MonoBehaviour
                 messageTextUI.text = "Start!";
                 ci.StartGame();
                 arrows.gameObject.SetActive(false);
-                LightController.setLightIntensity(1);
+                lighting.GetComponent<LightController>().setLightIntensity(1);
                 loadingSliderUI.gameObject.SetActive(false);
                 messageTextUI.gameObject.SetActive(true);
             }
