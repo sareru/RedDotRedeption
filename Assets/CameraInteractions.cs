@@ -27,7 +27,7 @@ public class CameraInteractions : MonoBehaviour
             if (gameStarted && !gameOver)
             {
                 gameTimer += Time.deltaTime;
-                textUI.text = "Deine Zeit:\n" + (gameTimer/60).ToString("00") + ":" + gameTimer.ToString("00.0") + "s";
+                textUI.text = "Deine Zeit:\n" + Mathf.Floor(gameTimer / 60f).ToString("00") + ":" + (gameTimer % 60f).ToString("00.0") + "s";
                 if (gameTimer > 2f)
                 {
                     messageUI.gameObject.SetActive(false);
@@ -136,6 +136,13 @@ public class CameraInteractions : MonoBehaviour
                             messageUI.text = "Gewonnen!";
                             messageUI.gameObject.SetActive(true);
                             gameOver = true;
+                            if (PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name, 10000000f) > gameTimer)
+                            {
+                                PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name, gameTimer);
+                            }
+                            textUI.text = "Deine Zeit: " + Mathf.Floor(gameTimer / 60f).ToString("00") + ":" + (gameTimer % 60f).ToString("00.0") + "s\nBeste Zeit: " + Mathf.Floor(PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name) / 60).ToString("00") + ":" + (PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name) % 60).ToString("00.0") + "s";
+
+
                         }
                         // Level verloren
                         else if (gameStarted && hit.collider.tag == "Mauer")

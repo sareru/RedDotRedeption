@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6915478506056423643}
   - component: {fileID: 6940786381981817615}
   m_Layer: 5
-  m_Name: Loading
+  m_Name: Ladebalken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 5334930430068304183}
   - component: {fileID: 5334930430068304184}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Red Dot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 5334930430293323751}
   - component: {fileID: 5334930430293323752}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Text oben
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 4254001543521956796}
   - component: {fileID: 7559722733285594151}
   m_Layer: 5
-  m_Name: Message
+  m_Name: Text mitte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
