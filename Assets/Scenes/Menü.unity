@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingSliderUI: {fileID: 841578504}
-  zuLadendesLvl: 3
+  zuLadendesLvl: Lvl3
 --- !u!222 &471445035
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7907,7 +7907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingSliderUI: {fileID: 841578504}
-  zuLadendesLvl: 1
+  zuLadendesLvl: Lvl1
 --- !u!222 &1767687377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10559,7 +10559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingSliderUI: {fileID: 841578504}
-  zuLadendesLvl: 2
+  zuLadendesLvl: Lvl2
 --- !u!65 &2029064928
 BoxCollider:
   m_ObjectHideFlags: 0

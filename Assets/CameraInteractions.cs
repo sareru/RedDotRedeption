@@ -12,6 +12,7 @@ public class CameraInteractions : MonoBehaviour
     public LayerMask ignoreMask;
     public Camera refCam;
     public Material wegMat;
+    public GameObject postGameMenu;
 
     RaycastHit oldHit;
 
@@ -74,7 +75,8 @@ public class CameraInteractions : MonoBehaviour
                                 rayLeft = false;
                             }
                             oldHit = hit;
-                        } else
+                        }
+                        else
                         {
                             if (oldHit.collider != null && oldHit.collider.tag == "Verweilen")
                             {
@@ -139,6 +141,7 @@ public class CameraInteractions : MonoBehaviour
                             messageUI.gameObject.SetActive(true);
                             StartCoroutine(ShowMessage());
                             gameOver = true;
+                            oldHit = hit;
                             if (PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name, 10000000f) > gameTimer)
                             {
                                 PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name, gameTimer);
@@ -155,6 +158,7 @@ public class CameraInteractions : MonoBehaviour
                             messageUI.gameObject.SetActive(true);
                             StartCoroutine(ShowMessage());
                             gameOver = true;
+                            oldHit = hit;
                         }
                         // Fake-Ziel erreicht
                         else if (gameStarted && hit.collider.tag == "Fake")
@@ -166,6 +170,10 @@ public class CameraInteractions : MonoBehaviour
                             StartCoroutine(HideMessage());
                         }
 
+                        if (gameOver)
+                        {
+                            postGameMenu.SetActive(true);
+                        }
                         /*else
                         {
                             if (gameStarted && oldHit.collider != null)
@@ -202,6 +210,63 @@ public class CameraInteractions : MonoBehaviour
                         textUI.text = "Game over!";
                         gameOver = true;
                     }
+                }
+            }
+        }
+        else
+        {
+            int layerMask = LayerMask.GetMask("Menü");
+            RaycastHit hit;
+            if (Physics.Raycast(refCam.transform.position, refCam.transform.forward, out hit, layerMask))
+            {
+                if (hit.collider != null)
+                {
+                    // Level laden
+                    if (hit.collider.tag == "Verweilen")
+                    {
+                        if (oldHit.collider != null)
+                        {
+                            if (oldHit.collider != hit.collider)
+                            {
+                                rayLeft = false;
+                                OnRayLeaveLvlBlock();
+                                OnRayHitLvlBlock(hit);
+                                oldHit = hit;
+                            }
+                            else
+                            {
+                                if (rayLeft)
+                                {
+                                    OnRayHitLvlBlock(hit);
+                                    oldHit = hit;
+                                    rayLeft = false;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            OnRayHitLvlBlock(hit);
+                            oldHit = hit;
+                            rayLeft = false;
+                        }
+                        oldHit = hit;
+                    }
+                    else
+                    {
+                        if (oldHit.collider != null && oldHit.collider.tag == "Verweilen")
+                        {
+                            OnRayLeaveLvlBlock();
+                            rayLeft = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (oldHit.collider != null && oldHit.collider.tag == "Verweilen")
+                {
+                    OnRayLeaveLvlBlock();
+                    rayLeft = true;
                 }
             }
         }

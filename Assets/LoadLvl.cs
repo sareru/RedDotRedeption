@@ -6,7 +6,7 @@ public class LoadLvl : MonoBehaviour
 {
     //public Text timerTextUI;
     public Slider loadingSliderUI;
-    public int zuLadendesLvl = 1;
+    public string zuLadendesLvl;
 
     const float timer = 2f;
     float verweilenTimer;
@@ -25,14 +25,13 @@ public class LoadLvl : MonoBehaviour
             if (verweilenTimer <= 0f)
             {
                 // Level laden
-                SceneManager.LoadScene("Lvl" + zuLadendesLvl.ToString(), LoadSceneMode.Single);
+                SceneManager.LoadScene(zuLadendesLvl, LoadSceneMode.Single);
                 gestartet = true;
             }
             else
             {
                 verweilenTimer -= Time.deltaTime;
                 loadingSliderUI.value = (timer - verweilenTimer) / timer;
-                Debug.Log(zuLadendesLvl);
             }
         }
     }
@@ -42,6 +41,7 @@ public class LoadLvl : MonoBehaviour
         verweilt = true;
         loadingSliderUI.value = 0f;
         loadingSliderUI.gameObject.SetActive(true);
+        Debug.Log(zuLadendesLvl);
     }
 
     public void RayLeaves()

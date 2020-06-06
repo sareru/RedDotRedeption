@@ -17,15 +17,15 @@ public class RotateCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localEulerAngles.x >= 0 && transform.localEulerAngles.x < 89.8 && IsInFocus == true) // && GameObject is focused
+        if (transform.localEulerAngles.x >= 0 && transform.localEulerAngles.x < 89.5 && IsInFocus == true) // && GameObject is focused
         {
-            transform.Rotate(0.2f, 0, 0, Space.Self);
+            transform.Rotate(0.5f, 0, 0, Space.Self);
 
         }
         
-        else if (transform.localEulerAngles.x >= 0.2f && transform.localEulerAngles.x <= 90 && IsInFocus == false) // && GameObject is not focused
+        else if (transform.localEulerAngles.x >= 0.5f && transform.localEulerAngles.x <= 90 && IsInFocus == false) // && GameObject is not focused
         {
-            transform.Rotate(-0.2f, 0, 0, Space.Self);
+            transform.Rotate(-0.5f, 0, 0, Space.Self);
         }
     }
 }
