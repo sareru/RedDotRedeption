@@ -225,6 +225,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32
   refCam: {fileID: 5334930428605686633}
+  wegMat: {fileID: 2100000, guid: 16061333277bddc49b12711fc871805c, type: 2}
 --- !u!81 &5334930428753367783
 AudioListener:
   m_ObjectHideFlags: 0

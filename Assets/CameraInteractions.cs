@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ public class CameraInteractions : MonoBehaviour
     public Text messageUI;
     public LayerMask ignoreMask;
     public Camera refCam;
+    public Material wegMat;
 
     RaycastHit oldHit;
 
@@ -135,6 +137,7 @@ public class CameraInteractions : MonoBehaviour
                         {
                             messageUI.text = "Gewonnen!";
                             messageUI.gameObject.SetActive(true);
+                            StartCoroutine(ShowMessage());
                             gameOver = true;
                             if (PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name, 10000000f) > gameTimer)
                             {
@@ -150,7 +153,17 @@ public class CameraInteractions : MonoBehaviour
                             textUI.text = "";
                             messageUI.text = "Game Over!";
                             messageUI.gameObject.SetActive(true);
+                            StartCoroutine(ShowMessage());
                             gameOver = true;
+                        }
+                        // Fake-Ziel erreicht
+                        else if (gameStarted && hit.collider.tag == "Fake")
+                        {
+                            hit.collider.gameObject.GetComponent<MeshRenderer>().material = wegMat;
+                            hit.collider.tag = "Weg";
+                            messageUI.text = "reingelegt :P";
+                            messageUI.gameObject.SetActive(true);
+                            StartCoroutine(HideMessage());
                         }
 
                         /*else
@@ -192,6 +205,18 @@ public class CameraInteractions : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator HideMessage()
+    {
+        yield return new WaitForSeconds(1);
+        messageUI.gameObject.SetActive(false);
+    }
+
+    IEnumerator ShowMessage()
+    {
+        yield return new WaitForSeconds(1);
+        messageUI.gameObject.SetActive(true);
     }
 
     void OnRayHitMaze(RaycastHit hit)
