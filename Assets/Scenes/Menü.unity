@@ -983,7 +983,7 @@ RectTransform:
   m_Children:
   - {fileID: 1135383606}
   m_Father: {fileID: 1623927229}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2034,7 +2034,7 @@ RectTransform:
   m_Children:
   - {fileID: 1928307108}
   m_Father: {fileID: 1623927229}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 50, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingSliderUI: {fileID: 841578504}
-  zuLadendesLvl: 1
+  zuLadendesLvl: 3
 --- !u!222 &471445035
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7369,8 +7369,8 @@ Transform:
   m_Children:
   - {fileID: 1767687371}
   - {fileID: 2029064925}
-  - {fileID: 259657598}
   - {fileID: 471445033}
+  - {fileID: 259657598}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
