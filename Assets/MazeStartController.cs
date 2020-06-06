@@ -13,7 +13,6 @@ public class MazeStartController : MonoBehaviour
     float verweilenTimer;
     bool verweilt = false;
     bool started = false;
-    bool allSet = false;
 
     private void Start()
     {
@@ -44,11 +43,7 @@ public class MazeStartController : MonoBehaviour
         } else if (started && verweilenTimer < 2f)
         {
             verweilenTimer += Time.deltaTime;
-        }/* else if (started && verweilenTimer >= 2f && !allSet)
-        {
-            messageTextUI.gameObject.SetActive(false);
-            allSet = true;
-        }*/
+        }
     }
 
     public void RayEnters(CameraInteractions ci)
