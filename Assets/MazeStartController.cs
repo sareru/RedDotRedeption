@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MazeStartController : MonoBehaviour
@@ -33,6 +34,7 @@ public class MazeStartController : MonoBehaviour
                 lighting.GetComponent<LightController>().setLightIntensity(1);
                 loadingSliderUI.gameObject.SetActive(false);
                 messageTextUI.gameObject.SetActive(true);
+                StartCoroutine(HideMessage());
             }
             else
             {
@@ -68,5 +70,11 @@ public class MazeStartController : MonoBehaviour
             verweilt = false;
             verweilenTimer = timer;
         }
+    }
+
+    IEnumerator HideMessage()
+    {
+        yield return new WaitForSeconds(2);
+        messageTextUI.gameObject.SetActive(false);
     }
 }

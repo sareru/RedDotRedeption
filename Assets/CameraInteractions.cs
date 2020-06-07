@@ -31,10 +31,6 @@ public class CameraInteractions : MonoBehaviour
             {
                 gameTimer += Time.deltaTime;
                 textUI.text = "Deine Zeit:\n" + Mathf.Floor(gameTimer / 60f).ToString("00") + ":" + (gameTimer % 60f).ToString("00.0") + "s";
-                if (gameTimer > 2f)
-                {
-                    messageUI.gameObject.SetActive(false);
-                }
             }
 
             RaycastHit hit;
@@ -156,7 +152,7 @@ public class CameraInteractions : MonoBehaviour
                             textUI.text = "";
                             messageUI.text = "Game Over!";
                             messageUI.gameObject.SetActive(true);
-                            StartCoroutine(ShowMessage());
+                            //StartCoroutine(ShowMessage());
                             gameOver = true;
                             oldHit = hit;
                         }
@@ -274,7 +270,7 @@ public class CameraInteractions : MonoBehaviour
 
     IEnumerator HideMessage()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         messageUI.gameObject.SetActive(false);
     }
 
