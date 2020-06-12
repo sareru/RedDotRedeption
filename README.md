@@ -20,3 +20,5 @@ Stellt sicher, dass ihr für die Ausführung in Unity auf eurem Smartphone folge
 * Wenn eurer Handy mit dem PC verbunden ist, könnt ihr sicher stellen, dass in Project Settings > Editor > Unity Remote: Device euer Smartphone gefunden wurde
 
 Wenn ihr jetzt das Spiel in Unity startet, sollte es auf eurem Smartphone angezeigt werden und die Kamera sich entsprechend der Handybewegung mitbewegen.
+
+(PS: Der Typo im Projekttitel ist absolut so jewollt, yes, si, hai.)
